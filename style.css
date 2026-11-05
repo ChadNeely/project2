@@ -1,0 +1,234 @@
+/* Style 1: Shared page foundation and fluid typography. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  color: #23313d;
+  background: #f4f1ea;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+}
+
+main {
+  width: 92%;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+h1,
+h2,
+h3 {
+  color: #123b52;
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+}
+
+h2 {
+  margin-top: 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+p {
+  max-width: 65ch;
+}
+
+/* Style 2: Centered horizontal navigation shared by all three pages. */
+header {
+  background: #123b52;
+  border-bottom: 0.35rem solid #d88a3d;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav a {
+  display: block;
+  padding: 0.55rem 1rem;
+  border-radius: 2rem;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus,
+nav a[aria-current="page"] {
+  color: #123b52;
+  background: #f3c677;
+}
+
+/* Style 3: Home page hero panel, accent text, and responsive image. */
+.hero,
+.resume-heading,
+.trip-heading {
+  margin-bottom: 2.5rem;
+  padding: clamp(2rem, 6vw, 5rem);
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #dcecf0, #ffffff);
+  box-shadow: 0 0.75rem 2rem rgba(18, 59, 82, 0.12);
+}
+
+.hero {
+  border-left: 0.75rem solid #d88a3d;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: #b35c28;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+section {
+  margin: 2rem 0;
+  padding: 1.5rem clamp(1.25rem, 4vw, 2.5rem);
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: 0 0.35rem 1rem rgba(18, 59, 82, 0.08);
+}
+
+section h2 {
+  padding-bottom: 0.5rem;
+  border-bottom: 0.15rem solid #f3c677;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 52rem;
+  height: auto;
+  margin: 1.5rem auto 0;
+  border-radius: 0.5rem;
+}
+
+/* Style 7: Home page content cards and list spacing. */
+.page-home section ul {
+  display: grid;
+  gap: 0.65rem;
+  padding-left: 1.25rem;
+}
+
+.page-home section li::marker {
+  color: #d88a3d;
+}
+
+/* Style 4: Resume page uses a centered fixed-width content column. */
+.page-resume main {
+  max-width: 52rem;
+}
+
+.resume-heading {
+  text-align: center;
+  border-top: 0.65rem solid #d88a3d;
+}
+
+.resume-heading > p:last-child {
+  margin: 0 auto;
+  color: #52636f;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+dt {
+  margin-top: 1rem;
+  color: #b35c28;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+dd {
+  margin-left: 1.5rem;
+}
+
+/* Style 8: Resume page separates skills into an easy-to-scan list. */
+.page-resume section ul {
+  padding-left: 1.25rem;
+  column-count: 2;
+  column-gap: 2rem;
+}
+
+/* Style 5: Trip page uses a wider fluid layout and a travel-themed palette. */
+.page-trip {
+  background: #e7f0ef;
+}
+
+.page-trip main {
+  width: 94%;
+  max-width: 78rem;
+}
+
+.trip-heading {
+  border-bottom: 0.65rem solid #2a7f82;
+  background: linear-gradient(135deg, #d8eeee, #ffffff);
+}
+
+.page-trip section {
+  border-left: 0.4rem solid #2a7f82;
+}
+
+video {
+  display: block;
+  width: 100%;
+  max-width: 42rem;
+  margin: 1.5rem auto 0;
+  border-radius: 0.5rem;
+  background: #123b52;
+}
+
+/* Style 9: Trip page emphasizes outdoor sections with alternating depth. */
+.page-trip section:nth-of-type(even) {
+  background: #f9fcfb;
+  transform: translateX(1rem);
+}
+
+/* Style 6: Responsive adjustments keep the navigation and content readable. */
+@media (max-width: 40rem) {
+  main {
+    width: 90%;
+    padding-top: 2rem;
+  }
+
+  nav ul {
+    gap: 0.15rem;
+  }
+
+  nav a {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.85rem;
+  }
+
+  section {
+    padding: 1.25rem 1rem;
+  }
+
+  .page-resume section ul {
+    column-count: 1;
+  }
+
+  .page-trip section:nth-of-type(even) {
+    transform: none;
+  }
+}
